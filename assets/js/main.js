@@ -7,16 +7,33 @@ va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). */
 
 // Chiedo al passeggero il numero di km da percorrere e lo assegno ad una variabile
-
+const tripKm = Number(prompt('How many km you have to cover?'));
 // Chiedo al passeggero la sua età e la assegno ad una variabile
-
+const passengerAge = Number(prompt('How old are you?'));
+// Loggo nella console i dati
+console.log(tripKm, passengerAge);
 
 /* Calcolo il prezzo totale del biglietto */
-// Assegno il prezzo euro per km ad una variabile
+// Assegno il prezzo euro per ogni km percorso
+const pricePerKm = 0.21;
+// Assegno ad una variabile il prezzo totale moltiplicando i km percorsi per il prezzo euro per km
+const provisionalPrice = tripKm * pricePerKm;
+// loggo nella console il prezzo totale provvisorio
+console.log(provisionalPrice);
+
+// dichiaro la variabile del prezzo totale
+let totalPrice = 0;
 
 // Dichiaro la condizione dello sconto del 20% per i minorenni
-
-// Dichiaro la condizione dello sconto del 40% per gli over 65
-
+if (passengerAge < 18) {
+    const discount20 = provisionalPrice / 100 * 20;
+    totalPrice = provisionalPrice - discount20;
+    console.log(totalPrice);
+} else if (passengerAge > 65) {
+    // Dichiaro la condizione dello sconto del 40% per gli over 65
+    const discount40 = provisionalPrice / 100 * 40;
+    totalPrice = provisionalPrice - discount40;
+    console.log(totalPrice);
+}
 
 // Output del prezzo 
