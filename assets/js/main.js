@@ -34,7 +34,7 @@ if (passengerAge < 18) {
     totalPrice = provisionalPrice - discount20;
     console.log(totalPrice);
     // output
-    priceDisplay.innerHTML = `${totalPrice}`;
+    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 
 } else if (passengerAge > 65) {
     // Dichiaro la condizione dello sconto del 40% per gli over 65
@@ -42,9 +42,9 @@ if (passengerAge < 18) {
     totalPrice = provisionalPrice - discount40;
     console.log(totalPrice);
     //output
-    priceDisplay.innerHTML = `${totalPrice}`;
+    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 } else {
     totalPrice = provisionalPrice;
     //output
-    priceDisplay.innerHTML = `${totalPrice}`;
+    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 }
