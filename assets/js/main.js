@@ -31,7 +31,7 @@ const priceDisplay = document.getElementById('price');
 if (passengerAge < 18) {
     // Dichiaro la condizione dello sconto del 20% per i minorenni
     const discount20 = provisionalPrice / 100 * 20;
-    totalPrice = provisionalPrice - discount20;
+    totalPrice = parseFloat(provisionalPrice - discount20).toFixed(2);
     console.log(totalPrice);
     // output
     priceDisplay.innerHTML = `&euro; ${totalPrice}`;
@@ -39,12 +39,12 @@ if (passengerAge < 18) {
 } else if (passengerAge > 65) {
     // Dichiaro la condizione dello sconto del 40% per gli over 65
     const discount40 = provisionalPrice / 100 * 40;
-    totalPrice = provisionalPrice - discount40;
+    totalPrice = parseFloat(provisionalPrice - discount40).toFixed(2);
     console.log(totalPrice);
     //output
     priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 } else {
-    totalPrice = provisionalPrice;
+    totalPrice = parseFloat(provisionalPrice).toFixed(2);
     //output
     priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 }
