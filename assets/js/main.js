@@ -16,24 +16,35 @@ console.log(tripKm, passengerAge);
 /* Calcolo il prezzo totale del biglietto */
 // Assegno il prezzo euro per ogni km percorso
 const pricePerKm = 0.21;
-// Assegno ad una variabile il prezzo totale moltiplicando i km percorsi per il prezzo euro per km
+// Assegno ad una variabile il prezzo provvisorio moltiplicando i km percorsi per il prezzo euro per km
 const provisionalPrice = tripKm * pricePerKm;
-// loggo nella console il prezzo totale provvisorio
+// loggo nella console il prezzo provvisorio
 console.log(provisionalPrice);
 
 // dichiaro la variabile del prezzo totale
 let totalPrice = 0;
 
-// Dichiaro la condizione dello sconto del 20% per i minorenni
+// assegno a una variabile l'elemento HTML con cui interagire
+const priceDisplay = document.getElementById('price');
+
+// Dichiaro le condizioni di avriazione del prezzo
 if (passengerAge < 18) {
+    // Dichiaro la condizione dello sconto del 20% per i minorenni
     const discount20 = provisionalPrice / 100 * 20;
     totalPrice = provisionalPrice - discount20;
     console.log(totalPrice);
+    // output
+    priceDisplay.innerHTML = `${totalPrice}`;
+
 } else if (passengerAge > 65) {
     // Dichiaro la condizione dello sconto del 40% per gli over 65
     const discount40 = provisionalPrice / 100 * 40;
     totalPrice = provisionalPrice - discount40;
     console.log(totalPrice);
+    //output
+    priceDisplay.innerHTML = `${totalPrice}`;
+} else {
+    totalPrice = provisionalPrice;
+    //output
+    priceDisplay.innerHTML = `${totalPrice}`;
 }
-
-// Output del prezzo 
