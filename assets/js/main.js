@@ -22,7 +22,7 @@ const provisionalPrice = tripKm * pricePerKm;
 console.log(provisionalPrice);
 
 // dichiaro la variabile del prezzo totale
-let totalPrice = 0;
+let totalPrice = provisionalPrice;
 
 // assegno a una variabile l'elemento HTML con cui interagire
 const priceDisplay = document.getElementById('price');
@@ -33,18 +33,12 @@ if (passengerAge < 18) {
     const discount20 = provisionalPrice / 100 * 20;
     totalPrice = Number(parseFloat(provisionalPrice - discount20).toFixed(2));
     console.log(totalPrice);
-    // output
-    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 
 } else if (passengerAge > 65) {
     // Dichiaro la condizione dello sconto del 40% per gli over 65
     const discount40 = provisionalPrice / 100 * 40;
     totalPrice = Number(parseFloat(provisionalPrice - discount40).toFixed(2));
     console.log(totalPrice);
-    //output
-    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
-} else {
-    totalPrice = parseFloat(provisionalPrice).toFixed(2);
-    //output
-    priceDisplay.innerHTML = `&euro; ${totalPrice}`;
 }
+
+priceDisplay.innerHTML = `&euro; ${totalPrice}`;
